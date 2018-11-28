@@ -1,1 +1,21 @@
-<h2>HOME</h2>
+<h2>Top Cryptocurrencies by Market Cap</h2>
+
+<div class='cardHolder'>
+  <div class="card" style="width: 18rem;" ng-repeat='(quote,value) in ctrl.quotesData.DISPLAY'>
+    <div class="card-body">
+      <h5 class="card-title">{{quote}}</h5>
+      <p class="card-text">{{value.USD.FROMSYMBOL}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Price: </strong>{{value.USD.PRICE}}</li>
+      <li class="list-group-item"><strong>Price BTC: </strong>{{value.BTC.PRICE}}</li>
+      <li class="list-group-item"><strong>Change 24hr: </strong>{{value.USD.CHANGEPCT24HOUR}} %</li>
+    </ul>
+    <div class="card-body">
+      <button><a href="#" class="card-link">More..</a></button>
+    </div>
+  </div>
+  </div>
+
+
+{{ ctrl.quotesData.DISPLAY }}

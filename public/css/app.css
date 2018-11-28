@@ -1,9 +1,19 @@
 
-
+h2 {
+  text-align: center;
+}
 
 .loginCreateBox {
     width:400px;
     height:300px;
     text-align: center;
     margin:20px auto;
+}
+
+.cardHolder {
+  display: flex;
+  flex-direction: row;
+  width: 640px;
+  flex-wrap: wrap;
+  margin:25px auto;
 }

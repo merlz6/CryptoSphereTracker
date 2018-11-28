@@ -4,7 +4,7 @@ app.controller('CryptoTrackerController', ['$http', function($http){
 
 
   /*********     Partials      ********/
-  this.includePath = './partials/login.html';
+  this.includePath = './partials/home.html';
   this.changeInclude = (path) => {
   this.includePath = './partials/'+ path +'.html';
   }
@@ -17,7 +17,7 @@ this.username = '';
   this.createUser = function(){
   $http({
       method:'POST',
-      url:'/users',
+      url:'/',
       data: {
           username: this.username,
           password: this.password
@@ -40,8 +40,9 @@ this.quotesData = []
       method:'GET',
       url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,LTC,BCH,EOS,XLM,XMR,ADA,TRX&tsyms=USD,BTC"
     }).then(function(response){
-      console.log(response.data);
-      this.quotesData = response.data
+      // console.log(response.data);
+      controller.quotesData = response.data
+
     }, error=>{
             console.log(error);
         })
