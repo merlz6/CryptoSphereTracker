@@ -9,11 +9,9 @@ h2 {
     text-align: center;
     margin:20px auto;
 }
-
-.cardHolder {
-  display: flex;
-  flex-direction: row;
-  width: 640px;
-  flex-wrap: wrap;
+.tableHolder{
+  text-align: center;
+}
+.table {
   margin:25px auto;
 }
