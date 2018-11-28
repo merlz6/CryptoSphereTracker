@@ -10,21 +10,21 @@ const session = require('express-session');
 // =======================================
 // To work on LOCAL comment out these next 5 lines
 // =======================================
-// app.use(session({
-//     secret: process.env.SECRET || process.env.HEROKU_SECRET,
-//     resave: false,
-//     saveUninitialized: false
-// }));
+app.use(session({
+    secret: process.env.SECRET || process.env.HEROKU_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 // ===================================================
 // To work on LOCAL comment back in these next 5 lines
 // ===================================================
-app.use(session({
-    secret:'feedmeseymour',
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(session({
+//     secret:'feedmeseymour',
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
 
 

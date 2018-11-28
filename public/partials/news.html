@@ -1,0 +1,22 @@
+
+  <h2 >Top News In Crypto and Blockchain</h2>
+<!-- {{ctrl.newsData.Data}} -->
+<div class='container'>
+  <div class='row'>
+
+    <div class='col-sm'>
+
+
+    <div class="card" style="width: 18rem;" ng-repeat='article in ctrl.newsData.Data'>
+      <img class="card-img-top" src="{{article.imageurl}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{article.title}}</h5>
+        <p class="card-text">{{article.body}}</p>
+        <a href="{{article.url}}" class="btn btn-primary">Read on..</a>
+      </div>
+    </div>
+    
+</div>
+
+    </div>
+  </div>

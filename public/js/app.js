@@ -48,5 +48,25 @@ this.quotesData = []
         })
     };
 
+
+      /*********     get NEWs      ********/
+    this.newsData = []
+    this.getNews = function(){
+      $http({
+        method:'GET',
+        url: "https://min-api.cryptocompare.com/data/v2/news/?lang=EN"
+      }).then(function(response){
+        // console.log(response.data);
+        controller.newsData = response.data
+
+      }, error=>{
+              console.log(error);
+          })
+      };
+
+
+
+
     this.getQuotes()
+    this.getNews()
 }]);

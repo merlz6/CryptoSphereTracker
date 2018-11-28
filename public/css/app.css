@@ -1,5 +1,6 @@
 
 h2 {
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -14,4 +15,10 @@ h2 {
 }
 .table {
   margin:25px auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  
 }
