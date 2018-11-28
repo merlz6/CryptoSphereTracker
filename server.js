@@ -51,7 +51,8 @@ app.use(express.static('public'));
 // =======================================
 
 
-
+const userController  = require('./controllers/cryptos.js')
+app.use('/cryptos', userController)
 
 
 
