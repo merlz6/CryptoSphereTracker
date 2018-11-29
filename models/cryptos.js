@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
     balances: {
-      balanceBTC: {type:Number, default:0},
+      balanceBTC: {type:Number, default:1},
       balanceLTC: {type:Number, default:0},
       balanceXRP: {type:Number, default:0},
       balanceETH: {type:Number, default:0},

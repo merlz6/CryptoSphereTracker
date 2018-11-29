@@ -86,8 +86,8 @@ this.quotesData = []
           url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + key  +"&tsyms=USD,BTC"
         }).then(function(response){
           console.log(response.data);
-          // controller.quoteData = response.data
-
+          controller.quoteData = response.data
+          controller.includePath = './partials/show.html';
         }, error=>{
                 console.log(error);
             })
