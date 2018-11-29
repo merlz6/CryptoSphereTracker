@@ -15,11 +15,22 @@ app.controller('CryptoTrackerController', ['$http', function($http){
   this.password ='';
   this.showWhenLoggedIn = false;
   this.balance = this.balance;
+  // show and hide login and logout / portfolio page and news buttons
   this.toggleWhenUserIsLoggedIn = function(){
       this.showWhenLoggedIn = !this.showWhenLoggedIn;
   };
-
-
+// need to toggle showing btc usd value on click
+this.showBTCValue = false;
+this.showUSDValue = !this.showBTCValue
+// function to toggle between USD and BTC
+this.toggleBTCValue = function(){
+  this.showBTCValue = true;
+  this.showUSDValue = false;
+}
+this.toggleUSDValue = function(){
+  this.showBTCValue = false;
+  this.showUSDValue = true;
+}
 
 /*********     Create User function      ********/
   this.createUser = function(){
