@@ -4,20 +4,28 @@ app.controller('CryptoTrackerController', ['$http', function($http){
 
 
   /*********     Partials      ********/
-  this.includePath = './partials/home.html';
+  this.includePath = './partials/login.html';
   this.changeInclude = (path) => {
   this.includePath = './partials/'+ path +'.html';
   }
-const controller = this;
-this.username = '';
+
+  /*********         ********/
+  const controller = this;
+  this.username = '';
   this.password ='';
+  this.showWhenLoggedIn = false;
+  this.balance = this.balance;
+  this.toggleWhenUserIsLoggedIn = function(){
+      this.showWhenLoggedIn = !this.showWhenLoggedIn;
+  };
 
 
 
+/*********     Create User function      ********/
   this.createUser = function(){
   $http({
       method:'POST',
-      url:'/',
+      url:'/cryptos',
       data: {
           username: this.username,
           password: this.password
@@ -30,7 +38,30 @@ this.username = '';
     })
   }
 
+  /*********     Login function      ********/
+    this.logIn = function(){
+          $http({
+              method:'POST',
+              url:'/sessions',
+              data: {
+                  username:this.username,
+                  password:this.password
+              }
+          }).then(function(response){
+              controller.userBalance = response.data;
+              console.log(controller.userBalance)
+              controller.includePath = './partials/home.html';
+              controller.toggleWhenUserIsLoggedIn();
+          })
+      }
 
+    /*********     Logout function      ********/
+    this.logout = function(){
+          this.username = "";
+          this.password = "";
+          controller.toggleWhenUserIsLoggedIn();
+
+        };
 
 
   /*********     getQuotes      ********/
@@ -48,6 +79,25 @@ this.quotesData = []
         })
     };
 
+    this.quoteData = {}
+      this.getQuote = function(key){
+        $http({
+          method:'GET',
+          url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + key  +"&tsyms=USD,BTC"
+        }).then(function(response){
+          console.log(response.data);
+          // controller.quoteData = response.data
+
+        }, error=>{
+                console.log(error);
+            })
+        };
+
+
+
+
+
+
 
       /*********     get NEWs      ********/
     this.newsData = []
@@ -63,6 +113,40 @@ this.quotesData = []
               console.log(error);
           })
       };
+
+      /*********    Update route      ********/
+  this.editCrypto = function(user){
+    $http({
+      method: 'PUT',
+      url: '/crypto/' + user._id,
+      data: {
+        balances:{
+        balanceBTC:this.balanceBTC,
+        balanceLTC:this.balanceLTC,
+        balanceXRP:this.balanceXRP,
+        balanceETH:this.balanceETH,
+        balanceXLM:this.balanceXLM,
+        balanceXMR:this.balanceXMR,
+        balanceADA:this.balanceADA,
+        balanceTRX:this.balanceTRX,
+        balanceEOS:this.balanceEOS,
+        balanceBCH:this.balanceBCH,
+        }
+      }
+    }).then(function(response){
+      console.log(response);
+      controller.includePath = './partials/home.html';
+
+    }, error => {
+      console.log(error);
+    })
+  };
+
+
+
+
+
+
 
 
 
