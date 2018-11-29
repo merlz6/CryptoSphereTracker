@@ -79,7 +79,7 @@ this.quotesData = []
         })
     };
 
-    this.quoteData = {}
+    this.quoteData = []
       this.getQuote = function(key){
         $http({
           method:'GET',

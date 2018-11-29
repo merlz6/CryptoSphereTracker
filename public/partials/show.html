@@ -1,7 +1,31 @@
-<div class="jumbotron">
-  <h1 class="display-4"></h1>
-  <p class="lead">{{ctrl.quoteData}}</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+<div class="jumbotron" ng-repeat='(quote,value) in ctrl.quoteData.DISPLAY'>
+  <h3 class="display-4">{{quote}}</h3>
+  <ul>
+    <li>
+      <STRONG>SYMBOL:</STRONG>{{value.USD.FROMSYMBOL}}
+    </li>
+    <li>
+      <STRONG>PRICE USD:</STRONG>{{value.USD.PRICE}}
+    </li>
+    <li>
+    <STRONG>PRICE BTC:</STRONG>  {{value.BTC.PRICE}}
+    </li>
+    <li>
+    <STRONG>COIN SUPPLY:</STRONG>  {{value.USD.SUPPLY}}
+    </li>
+    <li>
+      <STRONG>MARKETCAP:</STRONG> {{value.USD.MKTCAP}}
+    </li>
+    <li>
+      <STRONG>24 HOUR LOW:</STRONG>{{value.USD.LOW24HOUR}}
+    </li>
+    <li>
+      <STRONG>24 HOUR HIGH:</STRONG>{{value.USD.HIGH24HOUR}}
+    </li>
+    <li>
+    <STRONG>24 HOUR CHANGE:</STRONG>  {{value.USD.CHANGEPCT24HOUR}}
+    </li>
+    <!-- <td></td> -->
+  </ul>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
