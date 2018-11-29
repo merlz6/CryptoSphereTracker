@@ -90,6 +90,23 @@ this.quotesData = []
         })
     };
 
+// on home page i want to pull more prices than the available ones to the portfolio
+    this.quotesData2 = []
+      this.getQuotes2 = function(){
+        $http({
+          method:'GET',
+          url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,LTC,BCH,EOS,XLM,XMR,ADA,TRX,LINDA,TPAY,Ox,BAT,ETC,BNB,NEO,WTC,IOTA,DASH,ZEC,DOGE,DGB,ZIL,NPXS,HOT,ETN&tsyms=USD,BTC"
+        }).then(function(response){
+          // console.log(response.data);
+          controller.quotesData2 = response.data
+
+        }, error=>{
+                console.log(error);
+            })
+        };
+
+
+
     this.quoteData = []
       this.getQuote = function(key){
         $http({
@@ -163,5 +180,6 @@ this.quotesData = []
 
 
     this.getQuotes()
+    this.getQuotes2()
     this.getNews()
 }]);

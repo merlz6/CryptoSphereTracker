@@ -42,7 +42,7 @@
     </thead>
     <tbody>
 
-      <tr ng-repeat='(quote,value) in ctrl.quotesData.DISPLAY'>
+      <tr ng-repeat='(quote,value) in ctrl.quotesData2.DISPLAY'>
         <th scope="row">{{value.USD.FROMSYMBOL}}</th>
         <td><a href='#' ng-click='ctrl.getQuote(quote)'>{{quote}}</a></td>
         <td ng-if='ctrl.showUSDValue'>{{value.USD.PRICE}}</td>
