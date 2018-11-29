@@ -15,6 +15,7 @@ app.controller('CryptoTrackerController', ['$http', function($http){
   this.password ='';
   this.showWhenLoggedIn = false;
   this.balance = this.balance;
+
   // this.usersUSDvalueBTC = parseInt(this.userBalance.message.balances.balanceBTC * parseInt(this.quotesData.DISPLAY.value.USD.PRICE));
   // this.usersUSDvalueLTC =  parseInt(this.userBalance.message.balances.balanceLTC);
   // this.usersUSDvalueXRP =  parseInt(this.userBalance.message.balances.balanceXRP);
@@ -27,16 +28,18 @@ app.controller('CryptoTrackerController', ['$http', function($http){
   // this.usersUSDvalueBCH =  parseInt(this.userBalance.message.balances.balanceBCH);
 
 
-
+/************** TOGGLE FUNCTIONS ********/
 
 
   // show and hide login and logout / portfolio page and news buttons
   this.toggleWhenUserIsLoggedIn = function(){
       this.showWhenLoggedIn = !this.showWhenLoggedIn;
   };
+
 // need to toggle showing btc usd value on click
 this.showBTCValue = false;
 this.showUSDValue = !this.showBTCValue
+
 // function to toggle between USD and BTC
 this.toggleBTCValue = function(){
   this.showBTCValue = true;
@@ -46,6 +49,13 @@ this.toggleUSDValue = function(){
   this.showBTCValue = false;
   this.showUSDValue = true;
 }
+
+// toggle edit form visibility
+this.showEditField = false;
+this.toggleEditField = function(){
+  this.showEditField = !this.showEditField
+}
+
 
 /*********     Create User function      ********/
   this.createUser = function(){
