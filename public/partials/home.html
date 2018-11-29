@@ -33,7 +33,7 @@
 
       <tr ng-repeat='(quote,value) in ctrl.quotesData.DISPLAY'>
         <th scope="row">{{value.USD.FROMSYMBOL}}</th>
-        <td>{{quote}}</td>
+        <td><a href='#' ng-click='ctrl.getQuote(quote)'>{{quote}}</a></td>
         <td>{{value.USD.PRICE}}</td>
         <td>{{value.BTC.PRICE}}</td>
         <td>{{value.USD.MKTCAP}}</td>
