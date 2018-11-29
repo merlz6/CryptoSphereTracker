@@ -16,15 +16,26 @@
     </div>
   </div>
   </div> -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      BTC/USD
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button" ng-click='ctrl.toggleBTCValue()'>BTC Price</button>
+      <button class="dropdown-item" type="button" ng-click='ctrl.toggleUSDValue()'>USD Price</button>
 
+    </div>
+  </div>
 <div class='tableHolder'>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Ticker</th>
         <th scope="col">Name</th>
-        <th scope="col">Price USD</th>
-        <th scope="col">Price BTC</th>
+        <th scope="col" ng-if='ctrl.showUSDValue'>Price USD</th>
+        <th scope="col" ng-if='ctrl.showBTCValue'>Price BTC</th>
+        <th scope="col" ng-if='ctrl.showUSDValue'>24hr Volume USD</th>
+        <th scope="col" ng-if='ctrl.showBTCValue'>24hr Volume BTC</th>
         <th scope="col">Market Cap</th>
         <th scope="col">24hr Change %</th>
       </tr>
@@ -34,10 +45,13 @@
       <tr ng-repeat='(quote,value) in ctrl.quotesData.DISPLAY'>
         <th scope="row">{{value.USD.FROMSYMBOL}}</th>
         <td><a href='#' ng-click='ctrl.getQuote(quote)'>{{quote}}</a></td>
-        <td>{{value.USD.PRICE}}</td>
-        <td>{{value.BTC.PRICE}}</td>
+        <td ng-if='ctrl.showUSDValue'>{{value.USD.PRICE}}</td>
+        <td ng-if='ctrl.showBTCValue'>{{value.BTC.PRICE}}</td>
+        <td ng-if='ctrl.showUSDValue'>{{value.USD.TOTALVOLUME24HTO}}</td>
+        <td ng-if='ctrl.showBTCValue'>{{value.BTC.TOTALVOLUME24HTO}}</td>
         <td>{{value.USD.MKTCAP}}</td>
-        <td>{{value.USD.CHANGEPCT24HOUR}} %</td>
+        <td ng-if='ctrl.showUSDValue'>{{value.USD.CHANGEPCT24HOUR}} %</td>
+          <td ng-if='ctrl.showBTCValue'>{{value.BTC.CHANGEPCT24HOUR}} %</td>
       </tr>
 
     </tbody>
