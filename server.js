@@ -20,11 +20,11 @@ const session = require('express-session');
 // ===================================================
 // To work on LOCAL comment back in these next 5 lines
 // ===================================================
-// app.use(session({
-//     secret:'feedmeseymour',
-//     resave: false,
-//     saveUninitialized: false
-// }));
+app.use(session({
+    secret:'feedmeseymour',
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 

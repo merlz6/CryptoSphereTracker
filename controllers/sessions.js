@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/cryptos.js');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 
@@ -14,21 +14,21 @@ router.delete('/', (req, res)=>{
     })
 });
 
-// router.post('/', (req, res)=>{
-//     User.findOne({username:req.body.username}, (err, foundUser)=>{
-//         if(bcrypt.compareSync(req.body.password, foundUser.password)){
-//             req.session.currentUser = foundUser;
-//             res.status(201).json({
-//                 status:201,
-//                 message: foundUser
-//             })
-//         } else {
-//             res.status(401).json({
-//                 status:401,
-//                 message:'login failed'
-//             })
-//         }
-//     })
-// })
+router.post('/', (req, res)=>{
+    User.findOne({username:req.body.username}, (err, foundUser)=>{
+        if(bcrypt.compareSync(req.body.password, foundUser.password)){
+            req.session.currentUser = foundUser;
+            res.status(201).json({
+                status:201,
+                message: foundUser
+            })
+        } else {
+            res.status(401).json({
+                status:401,
+                message:'login failed'
+            })
+        }
+    })
+})
 
 module.exports = router;
