@@ -55,3 +55,16 @@ h2 {
 .editBalanceH5{
   text-align: center;
 }
+
+/*Keep footer at bottom: https://stackoverflow.com/questions/6127621/keeping-footer-at-the-bottom-of-window-on-site-that-scrolls-horizontal  */
+.footer{
+  background-attachment: scroll;
+   background-position: 0% 0%;
+   position: fixed;
+   bottom: 0pt;
+  width:100%;
+  background-color:#343a40;
+  height:30px;
+  color:white;
+  text-align: center;
+}

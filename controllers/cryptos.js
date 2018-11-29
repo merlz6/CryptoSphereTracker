@@ -13,7 +13,11 @@ router.post('/', (req, res)=>{
     });
 });
 
-
+router.put('/:id', (req, res)=>{
+    User.findByIdAndUpdate(req.params._id, req.body, {new:true}, (err, updatedUser)=>{
+        res.json(updatedUser);
+    });
+});
 
 
 

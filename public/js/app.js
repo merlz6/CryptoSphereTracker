@@ -168,7 +168,7 @@ this.quotesData = []
       };
 
       /*********    Update route      ********/
-  this.editCrypto = function(user){
+  this.editUserBalances = function(user){
     $http({
       method: 'PUT',
       url: '/crypto/' + user._id,
@@ -188,7 +188,7 @@ this.quotesData = []
       }
     }).then(function(response){
       console.log(response);
-      controller.includePath = './partials/home.html';
+      controller.includePath = './partials/portfolio.html';
 
     }, error => {
       console.log(error);

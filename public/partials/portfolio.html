@@ -61,12 +61,12 @@
   </div>
 
 
-<div class='editForm' ng-if='ctrl.showEditField'>
+<div class='editForm' ng-if='ctrl.showEditField' >
   <h5 class='editBalanceH5'>Edit Balances</h5>
-  <form>
+  <form ng-submit='ctrl.editUserBalances(user)'>
     <div class="form-group">
       <label>BTC</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceBTC}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.balances.balanceBTC' placeholder="{{ctrl.userBalance.message.balances.balanceBTC}}">
 
     </div>
     <div class="form-group">
@@ -76,7 +76,7 @@
     </div>
     <div class="form-group">
       <label>XRP</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceXRP}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="{{ctrl.userBalance.message.balances.balanceXRP}}">
 
     </div>
     <div class="form-group">
