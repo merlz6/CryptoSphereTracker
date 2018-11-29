@@ -4,21 +4,41 @@ h2 {
   text-align: center;
 }
 
+.loginCreateBox > h2{
+    margin-bottom: 25px;
+}
+
 .loginCreateBox {
+
     width:400px;
     height:300px;
     text-align: center;
-    margin:20px auto;
+    margin:50px auto;
 }
 .tableHolder{
   text-align: center;
 }
 .table {
   margin:25px auto;
+  padding:10px;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  
+
+}
+
+.BalanceAndButtonsHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dropDownAndEditHolder{
+  display: flex;
+  flex-direction: row;
+}
+.dropdownHomeHolder{
+  text-align: right;
 }

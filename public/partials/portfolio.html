@@ -1,18 +1,29 @@
 
 
 <h3>{{ctrl.username}} 's portfolio</h3>
-<h4>Balance: $</h4>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    BTC/USD
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button" ng-click='ctrl.toggleBTCValue()'>BTC Price</button>
-    <button class="dropdown-item" type="button" ng-click='ctrl.toggleUSDValue()'>USD Price</button>
+<div class='BalanceAndButtonsHolder'>
+  <div>
+    <h4>Balance: $</h4>
+    </div>
+    <div class='dropDownAndEditHolder'>
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          BTC/USD
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button" ng-click='ctrl.toggleBTCValue()'>BTC Price</button>
+          <button class="dropdown-item" type="button" ng-click='ctrl.toggleUSDValue()'>USD Price</button>
 
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline-success">Edit Balances</button>
+      </div>
   </div>
-</div>
+
+
+
+
 
 
 
@@ -39,7 +50,7 @@
         <td ng-if='ctrl.showUSDValue'>{{value.USD.PRICE}}</td>
         <td ng-if='ctrl.showBTCValue'>{{value.BTC.PRICE}}</td>
         <td>{{ctrl.userBalance.message.balances.balanceBTC}}</td>
-        <td></td>
+        <td>{{ctrl.usersUSDvalueBTC}}</td>
         <td ng-if='ctrl.showUSDValue'>{{value.USD.CHANGEPCT24HOUR}} %</td>
         <td ng-if='ctrl.showBTCValue'>{{value.BTC.CHANGEPCT24HOUR}} %</td>
       </tr>

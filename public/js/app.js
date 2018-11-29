@@ -15,6 +15,21 @@ app.controller('CryptoTrackerController', ['$http', function($http){
   this.password ='';
   this.showWhenLoggedIn = false;
   this.balance = this.balance;
+  // this.usersUSDvalueBTC = parseInt(this.userBalance.message.balances.balanceBTC * parseInt(this.quotesData.DISPLAY.value.USD.PRICE));
+  // this.usersUSDvalueLTC =  parseInt(this.userBalance.message.balances.balanceLTC);
+  // this.usersUSDvalueXRP =  parseInt(this.userBalance.message.balances.balanceXRP);
+  // this.usersUSDvalueETH =  parseInt(this.userBalance.message.balances.balanceETH);
+  // this.usersUSDvalueXLM =  parseInt(this.userBalance.message.balances.balanceXLM);
+  // this.usersUSDvalueXMR =  parseInt(this.userBalance.message.balances.balanceXMR);
+  // this.usersUSDvalueADA =  parseInt(this.userBalance.message.balances.balanceADA);
+  // this.usersUSDvalueTRX =  parseInt(this.userBalance.message.balances.balanceTRX);
+  // this.usersUSDvalueEOS =  parseInt(this.userBalance.message.balances.balanceEOS);
+  // this.usersUSDvalueBCH =  parseInt(this.userBalance.message.balances.balanceBCH);
+
+
+
+
+
   // show and hide login and logout / portfolio page and news buttons
   this.toggleWhenUserIsLoggedIn = function(){
       this.showWhenLoggedIn = !this.showWhenLoggedIn;
@@ -71,7 +86,7 @@ this.toggleUSDValue = function(){
           this.username = "";
           this.password = "";
           controller.toggleWhenUserIsLoggedIn();
-
+          controller.includePath = './partials/login.html';
         };
 
 
