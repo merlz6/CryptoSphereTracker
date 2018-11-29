@@ -4,10 +4,10 @@
 <div class='container'>
   <div class='row'>
 
-    <div class='col-sm'>
+    <div class='col-sm' ng-repeat='article in ctrl.newsData.Data'>
 
 
-    <div class="card" style="width: 18rem;" ng-repeat='article in ctrl.newsData.Data'>
+    <div class="card" style="width: 18rem;" >
       <img class="card-img-top" src="{{article.imageurl}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{article.title}}</h5>
@@ -15,7 +15,7 @@
         <a href="{{article.url}}" class="btn btn-primary">Read on..</a>
       </div>
     </div>
-    
+
 </div>
 
     </div>

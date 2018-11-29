@@ -1,4 +1,6 @@
-
+body {
+  background-color: lightgrey;
+}
 h2 {
   margin-top: 15px;
   text-align: center;
@@ -21,6 +23,7 @@ h2 {
 .table {
   margin:25px auto;
   padding:10px;
+  background-color: white;
 }
 
 .container {
@@ -41,4 +44,14 @@ h2 {
 }
 .dropdownHomeHolder{
   text-align: right;
+}
+.editForm{
+  width:400px;
+  margin:5px auto;
+  border:1.5px solid white;
+  padding:10px;
+  border-radius: 10px;
+}
+.editBalanceH5{
+  text-align: center;
 }
