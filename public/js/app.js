@@ -166,25 +166,26 @@ this.quotesData = []
     console.log(user)
     $http({
       method: 'PUT',
-      url: '/crypto/' + user._id,
+      url: '/users/' + user._id,
       data: {
-        balances:{
-        balanceBTC:this.editedBTC,
-        balanceLTC:this.editedLTC,
-        balanceXRP:this.editedXRP,
-        balanceETH:this.editedETH,
-        balanceXLM:this.editedXLM,
-        balanceXMR:this.editedXMR,
-        balanceADA:this.editedADA,
-        balanceTRX:this.editedTRX,
-        balanceEOS:this.editedEOS,
-        balanceBCH:this.editedBCH,
+        balances: {
+          balanceBTC: this.editedBTC,
+          balanceLTC: this.editedLTC,
+          balanceXRP: this.editedXRP,
+          balanceETH: this.editedETH,
+          balanceXLM: this.editedXLM,
+          balanceXMR: this.editedXMR,
+          balanceADA: this.editedADA,
+          balanceTRX: this.editedTRX,
+          balanceEOS: this.editedEOS,
+          balanceBCH: this.editedBCH
         }
+
       }
     }).then(function(response){
       console.log(response);
       controller.includePath = './partials/portfolio.html';
-
+      controller.toggleEditField()
     }, error => {
       console.log(error);
     })
@@ -210,10 +211,7 @@ this.quotesData = []
 
 
 
-this.value = 'hello'
-this.test = function(){
-  console.log('test')
-}
+
 
 
     this.getQuotes()
