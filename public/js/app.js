@@ -14,13 +14,13 @@ app.controller('CryptoTrackerController', ['$http', function($http){
   this.username = '';
   this.password ='';
   this.showWhenLoggedIn = false;
-  this.balance = this.balance;
+  // this.balance = this.balance;
 this.userBTCvalueUSD='';
 this.searchquote
 // this.getPortfolioValue = function(){
 //   this.userBTCvalueUSD = this.quotesData.RAW.BTC.Price
 // }
-
+this.balance =
 
 /************** TOGGLE FUNCTIONS ********/
 
@@ -99,7 +99,7 @@ this.quotesData = []
   this.getQuotes = function(){
     $http({
       method:'GET',
-      url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,LTC,BCH,EOS,XLM,XMR,ADA,TRX&tsyms=USD,BTC"
+      url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,LTC,BCH,EOS,XLM,XMR,ADA,ETH,TRX&tsyms=USD,BTC"
     }).then(function(response){
       // console.log(response.data);
       controller.quotesData = response.data
@@ -186,6 +186,7 @@ this.quotesData = []
       console.log(response);
       controller.includePath = './partials/portfolio.html';
       controller.toggleEditField()
+      controller.this.getBalance()
     }, error => {
       console.log(error);
     })
@@ -209,11 +210,13 @@ this.quotesData = []
 //
 //     };
 
+  //  this.balance =  ((+controller.userBalance.message.balances.balanceBTC * +controller.quotesData.RAW.BTC.value.USD.PRICE) +  (+controller.userBalance.message.balances.balanceETH * +controller.quotesData.RAW.ETH.value.USD.PRICE) + (+controller.userBalance.message.balances.balanceXRP * +controller.quotesData.RAW.XRP.value.USD.PRICE) +
+  // (+controller.userBalance.message.balances.balanceBCH * +controller.quotesData.RAW.BCH.value.USD.PRICE) +
+  // (+controller.userBalance.message.balances.balanceLTC * +controller.quotesData.RAW.LTC.value.USD.PRICE) + (+controller.userBalance.message.balances.balanceEOS * +controller.quotesData.RAW.EOS.value.USD.PRICE) + (+controller.userBalance.message.balances.balanceXLM * +controller.quotesData.RAW.XLM.value.USD.PRICE) + (+controller.userBalance.message.balances.balanceADA * +controller.quotesData.RAW.ADA.value.USD.PRICE) + (+controller.userBalance.message.balances.balanceTRX * +controller.quotesData.RAW.TRX.value.USD.PRICE) + (+controller.userBalance.message.balances.balanceXMR * +controller.quotesData.RAW.XMR.value.USD.PRICE))
 
 
 
-
-
+    // this.getBalance()
     this.getQuotes()
     this.getQuotes2()
     this.getNews()
