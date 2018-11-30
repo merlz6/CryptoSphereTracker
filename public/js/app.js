@@ -163,22 +163,22 @@ this.quotesData = []
 
       /*********    Update route      ********/
   this.editUserBalances = function(user){
-    console.log('edit user balances is runnign')
+    console.log(user)
     $http({
       method: 'PUT',
       url: '/crypto/' + user._id,
       data: {
         balances:{
-        balanceBTC:this.balanceBTC,
-        balanceLTC:this.balanceLTC,
-        balanceXRP:this.balanceXRP,
-        balanceETH:this.balanceETH,
-        balanceXLM:this.balanceXLM,
-        balanceXMR:this.balanceXMR,
-        balanceADA:this.balanceADA,
-        balanceTRX:this.balanceTRX,
-        balanceEOS:this.balanceEOS,
-        balanceBCH:this.balanceBCH,
+        balanceBTC:this.editedBTC,
+        balanceLTC:this.editedLTC,
+        balanceXRP:this.editedXRP,
+        balanceETH:this.editedETH,
+        balanceXLM:this.editedXLM,
+        balanceXMR:this.editedXMR,
+        balanceADA:this.editedADA,
+        balanceTRX:this.editedTRX,
+        balanceEOS:this.editedEOS,
+        balanceBCH:this.editedBCH,
         }
       }
     }).then(function(response){

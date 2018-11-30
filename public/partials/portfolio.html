@@ -69,55 +69,55 @@
 {{ctrl.value}}
 <div class='editForm' ng-if='ctrl.showEditField' >
   <h5 class='editBalanceH5'>Edit Balances</h5>
-  <form ng-submit='ctrl.test()'>
+  <form ng-submit='ctrl.editUserBalances(ctrl.userBalance.message)'>
     <div class="form-group">
       <label>BTC</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.balances.balanceBTC' placeholder="{{ctrl.userBalance.message.balances.balanceBTC}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedBTC' placeholder="{{ctrl.userBalance.message.balances.balanceBTC}}">
 
     </div>
     <div class="form-group">
       <label>ETH</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceETH}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedETH' placeholder="{{ctrl.userBalance.message.balances.balanceETH}}">
 
     </div>
     <div class="form-group">
       <label>XRP</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="{{ctrl.userBalance.message.balances.balanceXRP}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedXRP' placeholder="{{ctrl.userBalance.message.balances.balanceXRP}}">
 
     </div>
     <div class="form-group">
       <label>LTC</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceLTC}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedLTC' placeholder="{{ctrl.userBalance.message.balances.balanceLTC}}">
 
     </div>
     <div class="form-group">
       <label>BCH</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceBCH}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedBCH' placeholder="{{ctrl.userBalance.message.balances.balanceBCH}}">
 
     </div>
     <div class="form-group">
       <label>EOS</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceEOS}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedEOS' placeholder="{{ctrl.userBalance.message.balances.balanceEOS}}">
 
     </div>
     <div class="form-group">
       <label>XMR</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceXMR}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedXMR' placeholder="{{ctrl.userBalance.message.balances.balanceXMR}}">
 
     </div>
     <div class="form-group">
       <label>ADA</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceADA}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedADA' placeholder="{{ctrl.userBalance.message.balances.balanceADA}}">
 
     </div>
     <div class="form-group">
       <label>XLM</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceXLM}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedXLM' placeholder="{{ctrl.userBalance.message.balances.balanceXLM}}">
 
     </div>
     <div class="form-group">
       <label>TRX</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ctrl.userBalance.message.balances.balanceTRX}}">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.editedTRX' placeholder="{{ctrl.userBalance.message.balances.balanceTRX}}">
 
     </div>
 
