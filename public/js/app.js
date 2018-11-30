@@ -145,7 +145,6 @@ this.quotesData = []
 
 
 
-
       /*********     get NEWs      ********/
     this.newsData = []
     this.getNews = function(){

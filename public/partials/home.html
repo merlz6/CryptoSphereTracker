@@ -53,7 +53,7 @@
         <td ng-if='ctrl.showUSDValue'>{{value.USD.TOTALVOLUME24HTO}}</td>
         <td ng-if='ctrl.showBTCValue'>{{value.BTC.TOTALVOLUME24HTO}}</td>
         <td>{{value.USD.MKTCAP}}</td>
-        <td ng-if='ctrl.showUSDValue'>{{value.USD.CHANGEPCT24HOUR}} %</td>
+        <td ng-if='ctrl.showUSDValue' ng-style=''>{{value.USD.CHANGEPCT24HOUR}} %</td>
           <td ng-if='ctrl.showBTCValue'>{{value.BTC.CHANGEPCT24HOUR}} %</td>
       </tr>
 
