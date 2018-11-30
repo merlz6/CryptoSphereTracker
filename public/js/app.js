@@ -15,17 +15,11 @@ app.controller('CryptoTrackerController', ['$http', function($http){
   this.password ='';
   this.showWhenLoggedIn = false;
   this.balance = this.balance;
-
-  // this.usersUSDvalueBTC = parseInt(this.userBalance.message.balances.balanceBTC * parseInt(this.quotesData.DISPLAY.value.USD.PRICE));
-  // this.usersUSDvalueLTC =  parseInt(this.userBalance.message.balances.balanceLTC);
-  // this.usersUSDvalueXRP =  parseInt(this.userBalance.message.balances.balanceXRP);
-  // this.usersUSDvalueETH =  parseInt(this.userBalance.message.balances.balanceETH);
-  // this.usersUSDvalueXLM =  parseInt(this.userBalance.message.balances.balanceXLM);
-  // this.usersUSDvalueXMR =  parseInt(this.userBalance.message.balances.balanceXMR);
-  // this.usersUSDvalueADA =  parseInt(this.userBalance.message.balances.balanceADA);
-  // this.usersUSDvalueTRX =  parseInt(this.userBalance.message.balances.balanceTRX);
-  // this.usersUSDvalueEOS =  parseInt(this.userBalance.message.balances.balanceEOS);
-  // this.usersUSDvalueBCH =  parseInt(this.userBalance.message.balances.balanceBCH);
+this.userBTCvalueUSD='';
+this.searchquote
+// this.getPortfolioValue = function(){
+//   this.userBTCvalueUSD = this.quotesData.RAW.BTC.Price
+// }
 
 
 /************** TOGGLE FUNCTIONS ********/
@@ -169,6 +163,7 @@ this.quotesData = []
 
       /*********    Update route      ********/
   this.editUserBalances = function(user){
+    console.log('edit user balances is runnign')
     $http({
       method: 'PUT',
       url: '/crypto/' + user._id,
@@ -195,13 +190,30 @@ this.quotesData = []
     })
   };
 
+// this.colorGreen = true;
+// this.quoteDataColor =[]
+//   this.colorChange = function(quote){
+//     $http({
+//       method:'GET',
+//       url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + quote  +"&tsyms=USD,BTC"
+//     }).then(function(response){
+//       console.log(response.data);
+//       controller.quoteDataColor = response.data
+//       controller.includePath = './partials/show.html';
+//     }, error=>{
+//             console.log(error);
+//         })
+//
+//         if(Number(this.quoteDataColor.RAW.CHANGEPCT24HOUR) > 0)
+//
+//     };
 
 
 
-
-
-
-
+this.value = 'hello'
+this.test = function(){
+  console.log('test')
+}
 
 
     this.getQuotes()

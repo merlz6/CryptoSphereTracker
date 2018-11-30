@@ -1,6 +1,12 @@
 
+<div>
+  <h3>{{ctrl.username}} 's portfolio</h3>
+  <!-- <form class="form-inline my-2 my-lg-0" ng-submit='ctrl.getQuote(search)'>
+    <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search" value='search'>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div> -->
 
-<h3>{{ctrl.username}} 's portfolio</h3>
 
 <div class='BalanceAndButtonsHolder'>
   <div>
@@ -43,15 +49,15 @@
     </thead>
     <tbody>
 
-      <tr ng-repeat='(quote,value) in ctrl.quotesData.DISPLAY'>
+      <tr ng-repeat='(quote,value) in ctrl.quotesData.RAW' >
         <th scope="row">{{value.USD.FROMSYMBOL}}</th>
-        <!-- How do i get the quote in there so it knows which to get a single quote from ?  -->
+        <!-- need price from quotesData.RAW  -->
         <td><a href='#' ng-click='ctrl.getQuote(quote)'>{{quote}}</a></td>
-        <td ng-if='ctrl.showUSDValue'>{{value.USD.PRICE}}</td>
-        <td ng-if='ctrl.showBTCValue'>{{value.BTC.PRICE}}</td>
+        <td ng-if='ctrl.showUSDValue'>${{value.USD.PRICE}}</td>
+        <td ng-if='ctrl.showBTCValue'>{{value.BTC.PRICE}} BTC</td>
         <td>{{ctrl.userBalance.message.balances.balanceBTC}}</td>
-        <td>{{ctrl.usersUSDvalueBTC}}</td>
-        <td ng-if='ctrl.showUSDValue'>{{value.USD.CHANGEPCT24HOUR}} %</td>
+        <td>{{+value.USD.PRICE * +ctrl.userBalance.message.balances.balanceBTC.toFixed(9) }}</td>
+        <td ng-if='ctrl.showUSDValue'>{{value.USD.CHANGEPCT24HOUR.toFixed(2)}} %</td>
         <td ng-if='ctrl.showBTCValue'>{{value.BTC.CHANGEPCT24HOUR}} %</td>
       </tr>
 
@@ -60,10 +66,10 @@
 
   </div>
 
-
+{{ctrl.value}}
 <div class='editForm' ng-if='ctrl.showEditField' >
   <h5 class='editBalanceH5'>Edit Balances</h5>
-  <form ng-submit='ctrl.editUserBalances(user)'>
+  <form ng-submit='ctrl.test()'>
     <div class="form-group">
       <label>BTC</label>
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model='ctrl.balances.balanceBTC' placeholder="{{ctrl.userBalance.message.balances.balanceBTC}}">
@@ -115,7 +121,7 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary" ng-click='ctrl.toggleEditField()'>Submit</button>
+    <button type="submit" class="btn btn-primary" >Submit</button>
   </form>
 
   </div>
